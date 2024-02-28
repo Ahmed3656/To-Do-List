@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    min-height: 100vh;
+    padding-bottom: 20px;
+    background-color: #212529;
+}
+
+i {
+    cursor: pointer;
+}
+
+/* //////////////////////////// list //////////////////////////// */
+
+.list-container {
+    overflow: auto;
+}
+
+.title{
+    position: relative;
+    color: #fff;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+    transform: translate(-43%, 5px);
+
+    width: 60px;
+    height: 3px;
+
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.title:hover::after {
+    width: 170px;
+    height: 3px;
+}
+
+.tasks-input {
+    border: none;
+    outline: none;
+    width: 98%;
+}
+
+.tasks-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 7px 10px;
+}
+
+.completed-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 7px 10px;
+}
+
+.checkbox {
+    width: 20px !important;
+}
+
+.clear-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 4px 7px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width:820px) {
+    .tasks-input {
+        width: 95%;
+    }
+}
+@media (max-width:450px) {
+    .tasks-btn, .completed-btn {
+        font-size: 12px;
+        font-weight: 600;
+    }
+}
+@media (max-width:390px) {
+    .tasks-btn, .completed-btn {
+        font-size: 7px;
+        font-weight: 600;
+    }
+}
+
+/* //////////////////////////// completed //////////////////////////// */
+
+.line {
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+}
