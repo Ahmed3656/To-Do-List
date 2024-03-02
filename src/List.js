@@ -1,18 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function List(){
-    const [x, setX] = useState(() => {
-        const storedTasks = localStorage.getItem("tasks");
-        return storedTasks ? [].concat(...JSON.parse(storedTasks)) : [];
-      });
+function List({x, setX, remove, done}){
       const task = useRef();
     
+      function listTasks (){
+        return x.map((item, idx) => (
+          <tr key={idx}>
+            <th scope="row"><input type="checkbox" onClick={() => done(idx)} checked={false} /></th>
+            <td>{item.valu}<i className="fas fa-times float-end" onClick={()=> remove(idx)}></i></td>
+          </tr>
+        ))
+      }
+
       const addTask = () => {
         const value = task.current.value.trim();
         if (value) {
           const newTask = {
-            id: Date.now(),
             valu: value
           };
           setX([...x, newTask]);
@@ -21,42 +25,17 @@ function List(){
           alert("Please enter a task before adding");
         }
       };
-    
+
       const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
           addTask();
         }
       };
-    
-      function done(idx) {
-        let removedTask = x[idx]
-        let allTasks = x.filter((item, index) => index !== idx);
-        setTimeout(() => {
-            setX(allTasks);
 
-            const completed = JSON.parse(localStorage.getItem("completed")) || []
-            completed.push(removedTask)
-            localStorage.setItem("completed", JSON.stringify(completed))
-            window.location.reload()
-        }, 500);
-
-      }
-
-      function remove(idx) {
-        let leftTasks = x.filter((item, index) => index !== idx)
-
-        setX(leftTasks)
-      }
-    
       const clear = () => {
         localStorage.removeItem("tasks");
         window.location.reload();
       };
-    
-      useEffect(() => {
-        localStorage.setItem("tasks", JSON.stringify(x));
-      }, [x]);
-    
 
       const navigate = useNavigate()
 
@@ -81,12 +60,7 @@ function List(){
               </tr>
             </thead>
             <tbody>
-              {x.map((item, idx) => (
-                <tr key={idx}>
-                  <th scope="row"><input type="checkbox" onChange={() => done(idx)} /></th>
-                  <td>{item.valu}<i className="fas fa-times float-end" onClick={()=> remove(idx)}></i></td>
-                </tr>
-              ))}
+              {listTasks()}
             </tbody>
           </table>
           <button className={x.length ? "clear-btn mb-3 d-block" : "d-none"} onClick={clear}>Clear Tasks</button>

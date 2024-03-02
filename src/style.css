@@ -12,6 +12,7 @@
 
 i {
     cursor: pointer;
+    margin-top: 4px;
 }
 
 /* //////////////////////////// list //////////////////////////// */
@@ -82,13 +83,13 @@ i {
 }
 @media (max-width:450px) {
     .tasks-btn, .completed-btn {
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 600;
     }
 }
 @media (max-width:390px) {
     .tasks-btn, .completed-btn {
-        font-size: 7px;
+        font-size: 6px;
         font-weight: 600;
     }
 }

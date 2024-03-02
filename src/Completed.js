@@ -1,42 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Completed() {
-    const [y, setY] = useState(() => {
-        const storedCompleted = localStorage.getItem("completed")
-        return storedCompleted? [].concat(...JSON.parse(storedCompleted)) : []
-    }) 
-
+function Completed({y, remove, bringBack}) {
     const navigate = useNavigate()
 
     const clear = () => {
         localStorage.removeItem("completed")
         navigate("/")
-        window.location.reload()
     }
-
-    function bringBack(idx) {
-        const broughtBack = y[idx];
-        const leftItems = y.filter((item, index)=> index!==idx);
-        
-        setY(leftItems);
-
-        const allTasks = [].concat(JSON.parse(localStorage.getItem("tasks")))
-        allTasks.push(broughtBack)
-        localStorage.setItem("tasks", JSON.stringify(allTasks))
-        window.location.reload()
-    }
-
-    function remove(idx) {
-        let leftTasks = y.filter((item, index) => index !== idx)
-
-        setY(leftTasks)
-      }
-
-    useEffect(()=>{
-        localStorage.setItem("completed", JSON.stringify(y))
-    }, [y])
-
 
     return(
         <div>
