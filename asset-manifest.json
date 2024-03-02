@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/To-Do-List/static/css/main.efc05c26.css",
-    "main.js": "/To-Do-List/static/js/main.d1dc6ced.js",
+    "main.css": "/To-Do-List/static/css/main.e51c95b1.css",
+    "main.js": "/To-Do-List/static/js/main.c07cdad0.js",
     "static/js/453.a50becb7.chunk.js": "/To-Do-List/static/js/453.a50becb7.chunk.js",
     "static/media/fa-solid-900.svg": "/To-Do-List/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
     "static/media/fa-brands-400.svg": "/To-Do-List/static/media/fa-brands-400.2f517e09eb2ca6650ff5.svg",
@@ -19,12 +19,12 @@
     "static/media/fa-regular-400.woff": "/To-Do-List/static/media/fa-regular-400.bb58e57c48a3e911f15f.woff",
     "static/media/fa-regular-400.woff2": "/To-Do-List/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
     "index.html": "/To-Do-List/index.html",
-    "main.efc05c26.css.map": "/To-Do-List/static/css/main.efc05c26.css.map",
-    "main.d1dc6ced.js.map": "/To-Do-List/static/js/main.d1dc6ced.js.map",
+    "main.e51c95b1.css.map": "/To-Do-List/static/css/main.e51c95b1.css.map",
+    "main.c07cdad0.js.map": "/To-Do-List/static/js/main.c07cdad0.js.map",
     "453.a50becb7.chunk.js.map": "/To-Do-List/static/js/453.a50becb7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.efc05c26.css",
-    "static/js/main.d1dc6ced.js"
+    "static/css/main.e51c95b1.css",
+    "static/js/main.c07cdad0.js"
   ]
 }
